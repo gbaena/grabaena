@@ -87,20 +87,25 @@
  */
 ADC_CLOCK_SETUP_T adcsetup;
 
- void InicializarDAC(void)
+ void InicializarADC(void)
  {
 
 	 Chip_SCU_ADC_Channel_Confi(0, ADC_CH1);
-	 Chip_ADC_Init(LPC_ADC, &adcsetup );
-	 Chip_ADC_EnableChannel(LPC_ADC_T *pADC, ADC_CHANNEL_T channel,	 FunctionalState NewState)
+	 Chip_ADC_Init(LPC_ADC, &adcsetup);
+	 Chip_ADC_EnableChannel(LPC_ADC0, ADC_CH1,ENABLE);
  }
 
-
-
- void ActualizarValorDAC(uint16_t ValorDAC)
+ int ActualizarValorADC(void)
  {
-
+	 ArrancarADC();
  }
+ }
+
+ void ArrancarADC(void)
+ {
+	 Chip_ADC_SetStartMode(LPC_ADC_T *pADC, ADC_START_MODE_T mode,	 ADC_EDGE_CFG_T EdgeOption)
+ }
+
 
 
 /** @} doxygen end group definition */

@@ -106,8 +106,8 @@ extern void _vStackTop(void);
 
 void RIT_IRQHandler(void);
 void InicializarADC(void);
-void ActualizarValorADC(uint16_t ValorADC);
-
+int ActualizarValorADC(uint16_t ValorADC);
+void ArrancarADC(void);
 #else
 #endif
 
